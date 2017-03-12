@@ -1,0 +1,112 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<!-- This app was creating using the following: foundation, npm, grunt, js, jquery, json, sass/css and html 
+ Find the source code on GITHUB: https://github.com/zevrap21/tenable_assesment  -->
+   <head>
+    <!-- meta data -->
+      <meta charset="utf-8" />
+      <meta http-equiv="x-ua-compatible" content="ie=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="Expires" content="7" />
+      <title>Ajax Data Loading</title>
+      <meta name="description" content="Small one page application used to make ajax calls for requesting json data and display it in table format." />
+      <!-- open graph meta data used for social media -->
+      <meta property="og:title" content="Tenable - Nessus UI Assessment" />
+      <meta property="og:image" content="http://www.myprojectz.online/img/appoftheday.png" />
+      <meta property="og:description" content="Small one page application used to make ajax calls for requesting json data and displaying it in table format." />
+      <meta property="og:url" content="http://www.myprojectz.online/" />
+      <!-- CSS include  -->
+      <link rel="stylesheet" href="css/app.css" />
+   </head>
+   <body>
+      <!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      
+      
+      <div class="top-bar">
+         <div class="top-bar-title">
+            <h6><a href="http://www.myprojectz.online">Back to My Projects</a></h6>
+         </div>
+         <div>
+            <div class="top-bar-left"></div>
+            <div class="top-bar-right">
+               <div class="fb-share-button" data-href="http://www.myprojectz.online/" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.myprojectz.online%2F&amp;src=sdkpreparse">Share</a></div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="large-12 columns"  >
+            <h1 id="title">Ajax Data Loading</h1>
+         </div>
+      </div>
+      <!-- directions on how to use this app
+           makes use of motion.ui to perform the toggle, close and fade effects  -->
+      <div class="row">
+         <div class="large-12 columns" > 
+             <h5 id="title"><a data-toggle="app-information">Learn about this app</a></h5>
+            
+            <div class="callout secondary" id="app-information" data-toggler data-closable data-animate="fade-in fade-out">
+           
+            <p id="intro-paragraph">Make an ajax request via input field below. <br/> Enter file location and press the "Load Data" button.<br/>
+                File location: "js/data/configurations.json" or "js/data/configurations_large.json" <br/>
+                Loading the "js/data/configurations_large.json" file will demonstrate lazy loading for handling large amounts of data.<br/>
+               
+              <em> Note: App created with foundation 6, js, jquery, motion ui, css, scss.<br/> 
+               This app was created to learn basics of making ajax calls and then displaying the received json data.<br/>
+               
+               
+               </em>
+            </p>
+             <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                            <span aria-hidden="true">&times;</span>
+              </button>
+			</div>
+
+         </div>
+      </div>
+      <!-- this form is used to load the json file  -->
+      <form>
+         <div class="row">
+            <div class="large-8 columns"> 
+               <input title="Load Data" type="text" name="input" id="input" value="" placeholder="Enter your request url">
+            </div>
+            <div class="large-4 columns">
+               <button type="button" id="load-btn" class="button expanded" data-toggle="dataTable" aria-controls="dataTable" >Load Data </button>
+            </div>
+         </div>
+      </form>
+      <!-- table is built using jquery -->
+      <div class="row">
+         <div class="large-12 columns" >
+            <table >
+               <thead>
+                  <tr id="headings">
+                     <td>Name</td>
+                     <td>hostname</td>
+                     <td>port</td>
+                     <td>Username</td>
+                  </tr>
+               </thead>
+               <tbody id="dataTable">
+               </tbody>
+            </table>
+         </div>
+      </div>
+      
+      <!-- button used to remove loaded json data -->
+      <div class="row">
+         <div class="large-12 columns" >
+            <button title="Remove Data" type="button" id="btn-remove" class="button expanded">Remove Data</button>
+         </div>
+      </div>
+      <div class="cd-container"> <a href="#0" class="cd-top">Top</a></div>
+      
+      <!-- JS includes -->
+      <script src="js/facebook.js"></script>
+      <script src="js/library/jquery.min.js"></script>
+      <script src="js/library/what-input.min.js"></script>
+      <script src="js/library/foundation.min.js"></script>
+      <script src="js/library/motion-ui.min.js"></script>
+      <script src="js/app.js"></script>
+   </body>
+</html>

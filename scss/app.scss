@@ -1,0 +1,131 @@
+@charset 'utf-8';
+
+@import 'settings';
+@import 'foundation';
+ 
+ @import 'motion-ui';
+
+@include foundation-global-styles;
+ @include foundation-grid;
+//@include foundation-flex-grid;
+ @include foundation-typography;
+ @include foundation-button;
+ @include foundation-forms;
+//@include foundation-range-input;
+ @include foundation-accordion;
+//@include foundation-accordion-menu;
+//@include foundation-badge;
+//@include foundation-breadcrumbs;
+//@include foundation-button-group;
+ @include foundation-callout;
+//@include foundation-card;
+ @include foundation-close-button;
+//@include foundation-menu;
+//@include foundation-menu-icon;
+//@include foundation-drilldown-menu;
+//@include foundation-dropdown;
+//@include foundation-dropdown-menu; 
+//@include foundation-responsive-embed;
+//@include foundation-label;
+//@include foundation-media-object;
+//@include foundation-off-canvas;
+//@include foundation-orbit;
+//@include foundation-pagination;
+//@include foundation-progress-bar;
+//@include foundation-progress-element;
+//@include foundation-meter-element;
+//@include foundation-slider;
+//@include foundation-sticky;
+//@include foundation-reveal;
+//@include foundation-switch;
+@include foundation-table;
+//@include foundation-tabs;
+//@include foundation-thumbnail;
+//@include foundation-title-bar;
+//@include foundation-tooltip;
+@include foundation-top-bar;
+//@include foundation-visibility-classes;
+//@include foundation-float-classes;
+// @include foundation-flex-classes;
+
+ @include motion-ui-transitions;
+// @include motion-ui-animations;
+
+
+ 
+
+/* -------------------------------- 
+
+Main Custom Styles
+
+-------------------------------- */ 
+ .row::before, .row::after {
+    display: table;
+    content: none;
+}
+
+ .name{width: 20%;}
+ .hostname{width:40%;}
+ .port{width:20%;}
+ 
+ #intro-paragraph{font-size:.9em;}
+ #title{color:#1779ba; text-align:center;}
+ 
+.top-bar-right { padding: 0.5rem 1rem 0.5rem 0;}
+
+
+label { 
+    line-height: 1;
+    color: #fff;
+}
+.top-bar-right h6{float:left;}
+.fb-share-button{float:left;}
+
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+ html { font-size: 80%; }
+}
+
+/* -------------------------------- 
+
+Back To Top Arrow Styles
+
+-------------------------------- */
+.cd-top {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	position: fixed;
+	bottom: 40px;
+	right: 20px;
+	box-shadow: 0 0 10px rgba(#000, .05);
+
+	/* image replacement properties */
+	overflow: hidden; 
+	text-indent: 100%;
+	white-space: nowrap;
+	background: rgba(#14679e, .8) url(../img/cd-top-arrow.svg) no-repeat center 50%;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: opacity .3s 0s, visibility 0s .3s;
+	-moz-transition: opacity .3s 0s, visibility 0s .3s;
+	transition: opacity .3s 0s, visibility 0s .3s;
+	
+	&.cd-is-visible, &.cd-fade-out, .no-touch &:hover {
+		-webkit-transition: opacity .3s 0s, visibility 0s 0s;
+		-moz-transition: opacity .3s 0s, visibility 0s 0s;
+		transition: opacity .3s 0s, visibility 0s 0s;
+	}
+
+	&.cd-is-visible { /* the button becomes visible */
+		visibility: visible;
+		opacity: 1;
+	}
+
+	&.cd-fade-out { /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+		opacity: .5;
+	}
+
+ }
